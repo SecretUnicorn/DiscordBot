@@ -7,7 +7,10 @@ client.on('ready', () => {
   });
 
 client.on('message', (message) => {
-
+  if (message.content === 'ping') {
+    // Send "pong" to the same channel
+    message.channel.send('pong');
+  }
 }); // You don't need to add anything to the message event listener
 
 let scheduledMessage = new cron.CronJob('0 19 * * 0', () => {
